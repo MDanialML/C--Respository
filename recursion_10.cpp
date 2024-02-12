@@ -5,8 +5,9 @@ void reverseString(string& st,int start)
 {
     cout<<st<<endl;
     int end = st.length()-1;
+    int mid = 0 + (0 - end)/2;
     //base case
-    if (start > ((0 + end)/2))
+    if (start > mid)
     {
         return;
     }
