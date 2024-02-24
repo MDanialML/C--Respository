@@ -22,7 +22,7 @@ void insertAtHead(Node* &Head, int data)
 }
 
 //inset at the specified index
-void insertAtMiddle(Node* &Head,int pos,int data)
+void insertAtMiddle(Node* &Head,Node* &Tail,int pos,int data)
 {
     int count = 1;
     Node* temp = Head;
@@ -31,6 +31,12 @@ void insertAtMiddle(Node* &Head,int pos,int data)
         count++;
         temp = temp->next;
     }
+    //insert at the end
+    if(temp->next == NULL)
+    {
+        insertAtHead(Tail,data);
+    }
+
     Node* nodetoinsert = new Node(data);
     nodetoinsert->next = temp->next;
     temp->next = nodetoinsert;
@@ -74,8 +80,14 @@ int main()
     print(Head);
 
     //insert at the middle of linked list
-    insertAtMiddle(Head,3,15);
+    insertAtMiddle(Head,Tail,3,15);
     print(Head);
 
+    //insert at the middle of linked list
+    insertAtMiddle(Head,Tail,5,89);
+    print(Head);
+
+    cout <<"Head pointing "<<Head->data<<endl;
+    cout <<"Tail Pointing "<<Tail->data<<endl;
     return 0;
 }
