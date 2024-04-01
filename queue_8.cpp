@@ -21,7 +21,7 @@ void interLeaveQueue(queue<int> &q)
         s1.push(val);
     }
     //now extracting from stack1 and pushing back to stack2 for re ordering
-    stack<int> s2;
+    stack<int> s2; //extra space for re-ordering 
     while(!s1.empty())
     {
         int val = s1.top();
