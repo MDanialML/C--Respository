@@ -2,7 +2,7 @@
 #include <bits/stdtr1c++.h>
 using namespace std;
 
-
+/*
 //linked list node
 class Node{
     public:
@@ -44,6 +44,15 @@ void printLLData(Node* head)
 }
 
 void create2DVec(Node* head,vector<int> &vec);
+*/
+
+//custom compare for minheap
+class compare{
+    public:
+    bool operator()(list<int>* a, list <int>* b){
+        // return a->data > b->data;
+    }
+};
 
 int main()
 {
